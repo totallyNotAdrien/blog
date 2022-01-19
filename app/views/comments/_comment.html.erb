@@ -2,3 +2,12 @@
   <strong><%= comment.commenter %></strong><br>
   <%= comment.body %>
 </p>
+
+<p>
+  <%# link_to("Delete Comment", polymorphic_url([comment.article, comment])) %>
+  <%# link_to("Delete Comment", [comment.article, comment]) %>
+  <%# same thing  %>
+  <%= link_to("Delete Comment", [comment.article, comment], 
+    method: :delete, data:{confirm: "Are you sure?"}) %>
+
+</p>
